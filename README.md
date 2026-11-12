@@ -16,11 +16,9 @@
   <img src="https://github.com/cdeweyx/conor-os/raw/main/assets/readme/hero-dark.png#gh-dark-mode-only" width="100%" alt="A 1-bit desktop booting ConorOS: a window loading brand-design over a row of step icons, research to growth">
 </p>
 
-My Claude setup: the skills, agents, and global rules that follow me into every project. They know how I research, shape, design, build, brand, and launch a product, and hand work to a small set of agent roles.
+My Claude Code setup: the skills, agents, and global rules that follow me into every project. They cover how I take a product from idea to launch (research, shaping, design, build, brand, and growth) and hand the work to four agent roles.
 
-The rule for what lives here: how I think and work (formats, voice, judgment, checklists), never where things go (database IDs, channels, tool names). That plumbing stays in each project's own repo.
-
-This is my personal setup, published as I use it. Fork it and make it yours. I'm not taking issues or pull requests.
+I publish it from my private copy every week, minus anything too specific to me (my products, my accounts, the details of past projects). Fork it and make it yours. I'm not taking issues or pull requests.
 
 ## Skills
 
