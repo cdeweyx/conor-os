@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DESIGN.md specimen</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBFAF7;--ink:#1C1B18;--ink-2:#5E5B54;--ink-3:#77746C;--line:#E7E4DD;--control:#8E8A81;--accent:#1F4E8C;--positive:#2E7148;--negative:#B5451B}
+.dark{--paper:#000000;--ink:#EDEBE6;--ink-2:#ABA79E;--ink-3:#8C887F;--line:#2A2926;--control:#66625B;--accent:#7FA6E0;--positive:#5FB383;--negative:#E2805A;background:var(--paper);color:var(--ink);padding:16px;border-radius:3px}
+*{box-sizing:border-box;margin:0}
+html{font:14px/1.5 "IBM Plex Sans","Public Sans",sans-serif;color:var(--ink);background:var(--paper);font-variant-numeric:tabular-nums}
+body{padding:32px;max-width:1100px}
+h1{font-size:16px;font-weight:600;margin:48px 0 16px;color:var(--ink-2)}
+h1:first-child{margin-top:0}
+.meta{font-size:12px;color:var(--ink-3)}.tbl{font-size:13px}.body{font-size:14px}.sec{font-size:16px;font-weight:600}.lead{font-size:20px;font-weight:500;line-height:1.3;max-width:60ch}.hero{font-size:28px;font-weight:500;line-height:1.1;font-variant-numeric:proportional-nums}
+.pos{color:var(--positive)}.neg{color:var(--negative)}
+.sw{display:flex;gap:12px;flex-wrap:wrap}
+.sw div{width:100px}
+.sw .c{height:48px;border:1px solid var(--line);border-radius:3px}
+.sw .n{font-size:12px;color:var(--ink-3);margin-top:4px}
+.ladder span{display:inline-block;padding:4px 10px;border-radius:3px;font-size:13px;margin:8px 8px 0 0}
+.type p{margin:6px 0}
+.screen{border:1px solid var(--line);border-radius:3px;padding:32px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.head h2{font-size:20px;font-weight:600}
+.callout{display:flex;gap:8px;align-items:center;background:var(--line);border-radius:3px;padding:8px 12px;margin-top:20px;font-weight:500}
+.callout svg{flex:none}
+.stats{display:flex;gap:48px;margin:32px 0;flex-wrap:wrap}
+.stat .l{font-size:12px;color:var(--ink-2)}.stat .v{font-size:28px;font-weight:500;line-height:1.1;margin:4px 0}.stat .d{font-size:13px;color:var(--ink-2)}
+.split{display:grid;grid-template-columns:380px 1fr;gap:32px;align-items:start}
+svg text{font-family:inherit;font-size:12px;fill:var(--ink-3)}
+.bars path{fill:var(--ink-2)}.bars .hi{fill:var(--accent)}
+.zero{stroke:var(--ink-3)}.ink-line{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{height:32px;padding:6px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{font-size:12px;font-weight:500;color:var(--ink-2)}
+th:first-child,td:first-child{padding-left:16px}th:last-child,td:last-child{padding-right:16px}
+.num{text-align:right}
+.st i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.todo{border:1.5px solid var(--ink-2)}.doing{background:linear-gradient(90deg,var(--ink-2) 50%,transparent 50%);border:1.5px solid var(--ink-2)}.done{background:var(--ink-2)}.blocked{width:10px!important;height:2px!important;border-radius:0!important;background:var(--ink-2)}
+.tabs a{font-size:13px;color:var(--ink-2);margin-right:4px;padding:4px 12px;border-radius:9999px}.tabs a.on{background:var(--line);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:3px;padding:16px}
+.card h3{font-size:14px;font-weight:600;margin-bottom:8px}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--control);background:var(--paper);border-radius:3px;color:var(--ink)}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}button.ghost{border-color:transparent;color:var(--ink-2)}
+input{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--control);border-radius:3px;background:var(--paper);color:var(--ink);width:280px}
+.skel{height:12px;border-radius:3px;background:var(--line);margin:8px 0}
+</style></head><body>
+
+<h1>Colors, light and dark</h1>
+<div class="sw">
+<div><div class="c" style="background:var(--paper)"></div><div class="n">paper #FBFAF7</div></div>
+<div><div class="c" style="background:var(--ink)"></div><div class="n">ink #1C1B18 16.5:1</div></div>
+<div><div class="c" style="background:var(--ink-2)"></div><div class="n">ink-2 #5E5B54 6.5:1</div></div>
+<div><div class="c" style="background:var(--ink-3)"></div><div class="n">ink-3 #77746C 4.5:1</div></div>
+<div><div class="c" style="background:var(--line)"></div><div class="n">line #E7E4DD</div></div>
+<div><div class="c" style="background:var(--control)"></div><div class="n">control #8E8A81 3.3:1</div></div>
+<div><div class="c" style="background:var(--accent)"></div><div class="n">accent #1F4E8C 8.0:1</div></div>
+<div><div class="c" style="background:var(--positive)"></div><div class="n">positive #2E7148 5.6:1</div></div>
+<div><div class="c" style="background:var(--negative)"></div><div class="n">negative #B5451B 5.3:1</div></div>
+</div>
+<div class="dark sw" style="margin-top:16px">
+<div><div class="c" style="background:var(--paper)"></div><div class="n">paper #000000</div></div>
+<div><div class="c" style="background:var(--ink)"></div><div class="n">ink #EDEBE6 17.6:1</div></div>
+<div><div class="c" style="background:var(--ink-2)"></div><div class="n">ink-2 #ABA79E 8.8:1</div></div>
+<div><div class="c" style="background:var(--ink-3)"></div><div class="n">ink-3 #8C887F 5.9:1</div></div>
+<div><div class="c" style="background:var(--line)"></div><div class="n">line #2A2926</div></div>
+<div><div class="c" style="background:var(--control)"></div><div class="n">control #66625B 3.5:1</div></div>
+<div><div class="c" style="background:var(--accent)"></div><div class="n">accent #7FA6E0 8.4:1</div></div>
+<div><div class="c" style="background:var(--positive)"></div><div class="n">positive #5FB383 8.3:1</div></div>
+<div><div class="c" style="background:var(--negative)"></div><div class="n">negative #E2805A 7.5:1</div></div>
+</div>
+<p class="meta" style="margin-top:16px">Graded scale (due dates met, last 10 tasks), diverging with gray at the middle, always with the word and the count:</p>
+<div class="ladder">
+<span style="background:var(--negative);color:#fff">Mostly missed, 2 of 10</span>
+<span style="background:rgba(181,69,27,.4)">Often missed, 4 of 10</span>
+<span style="background:var(--ink-3);color:#fff">Mixed, 6 of 10</span>
+<span style="background:rgba(46,113,72,.4)">Mostly met, 8 of 10</span>
+<span style="background:var(--positive);color:#fff">All met, 10 of 10</span>
+</div>
+
+<h1>Typography: IBM Plex Sans, 400 / 500 / 600</h1>
+<div class="type">
+<p class="hero">18 <span class="meta">28 hero number, proportional figures</span></p>
+<p class="lead">The team closed 18 tasks this week, <span class="pos">5 more</span> than last week. <span class="meta">20 lead, 500</span></p>
+<p class="sec">Tasks done per week <span class="meta" style="font-weight:400">16 section title, 600</span></p>
+<p class="body">Design review moved to Thursday, so the homepage copy is due a day later. <span class="meta">14 body</span></p>
+<p class="tbl">41 of 66 tasks done, 62% <span class="meta">13 table, tabular figures: 1111 1l1I 0O</span></p>
+<p class="meta">Updated 9:12 AM by Priya, 12 meta</p>
+</div>
+
+<h1>Layout: one screen at the density rules</h1>
+<div class="screen">
+<div class="head"><div><h2>Website relaunch</h2><p class="meta" style="margin-top:4px">5 people, due Dec 4</p></div><div class="row"><button class="ghost">Invite</button><button class="primary">New task</button></div></div>
+<div class="callout"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1.5 13 12.5H1Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7 5.5v3.2M7 10.3v.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>3 tasks are past their due date. <a style="color:var(--accent);font-weight:400">Review overdue</a></div>
+<div class="stats">
+<div class="stat"><div class="l">Open tasks</div><div class="v">25</div><div class="d"><span class="pos">-6</span> since last week</div></div>
+<div class="stat"><div class="l">Done this week</div><div class="v">18</div><div class="d"><span class="pos">+5</span> on last week</div></div>
+<div class="stat"><div class="l">Overdue</div><div class="v neg">3</div><div class="d"><span class="neg">+1</span> since last week</div></div>
+<div class="stat"><div class="l">Due this week</div><div class="v">9</div><div class="d">+0 on last week</div></div>
+</div>
+<div class="split">
+<div>
+<p class="sec">Tasks done per week</p><p class="meta" style="margin-bottom:8px">Last 12 weeks</p>
+<svg width="380" height="176" viewBox="0 0 380 176"><g class="bars">
+<path d="M40,150V99Q40,96 43,96H61Q64,96 64,99V150Z"/><path d="M66,150V81Q66,78 69,78H87Q90,78 90,81V150Z"/><path d="M92,150V105Q92,102 95,102H113Q116,102 116,105V150Z"/><path d="M118,150V69Q118,66 121,66H139Q142,66 142,69V150Z"/>
+<path d="M144,150V87Q144,84 147,84H165Q168,84 168,87V150Z"/><path d="M170,150V63Q170,60 173,60H191Q194,60 194,63V150Z"/><path d="M196,150V93Q196,90 199,90H217Q220,90 220,93V150Z"/><path d="M222,150V75Q222,72 225,72H243Q246,72 246,75V150Z"/>
+<path d="M248,150V57Q248,54 251,54H269Q272,54 272,57V150Z"/><path d="M274,150V81Q274,78 277,78H295Q298,78 298,81V150Z"/><path d="M300,150V75Q300,72 303,72H321Q324,72 324,75V150Z"/><path class="hi" d="M326,150V45Q326,42 329,42H347Q350,42 350,45V150Z"/></g>
+<line class="zero" x1="36" y1="150" x2="354" y2="150"/>
+<text x="332" y="36" style="fill:var(--ink);font-weight:600;font-size:13px">18</text>
+<text x="0" y="46">Tasks</text><text x="40" y="168">Aug 24</text><text x="314" y="168">Nov 9</text>
+</svg>
+</div>
+<table><thead><tr><th>Task</th><th>Owner</th><th>Status</th><th>Due</th><th class="num">Hours</th></tr></thead><tbody>
+<tr><td>Write homepage copy</td><td>Priya</td><td class="st"><i class="doing"></i>In progress</td><td>Nov 13</td><td class="num">6</td></tr>
+<tr><td>Pricing page layout</td><td>Sam</td><td class="st"><i class="blocked"></i>Blocked</td><td class="neg">Nov 9, 3 days late</td><td class="num">8</td></tr>
+<tr><td>Set up redirects</td><td>Ana</td><td class="st"><i class="todo"></i>To do</td><td>Nov 18</td><td class="num">3</td></tr>
+<tr><td>Choose hero photo</td><td>Leo</td><td class="st"><i class="done"></i>Done</td><td>Nov 10</td><td class="num">2</td></tr>
+</tbody></table>
+</div>
+</div>
+<p class="meta" style="margin-top:8px">Status is shape plus word in gray, no hue. Only numbers that read good or bad wear a sign color; counts stay ink.</p>
+
+<h1>Components</h1>
+<div class="grid">
+<div class="card"><h3>Website relaunch</h3><p class="hero" style="font-size:20px">41 of 66 done</p><p class="meta" style="margin-top:4px">Due Dec 4, 3 overdue</p><p style="margin-top:12px;color:var(--accent)">Open project ›</p></div>
+<div class="card" style="border-color:var(--control)"><h3>Mobile app <span class="meta" style="font-weight:400">selected</span></h3><p class="hero" style="font-size:20px">12 of 40 done</p><p class="meta" style="margin-top:4px">Due Feb 20, none overdue</p><p style="margin-top:12px;color:var(--accent)">Open project ›</p></div>
+<div class="card"><h3>Brand refresh</h3><p class="hero" style="font-size:20px;color:var(--ink-3)">2 tasks</p><p class="meta" style="margin-top:4px">Not enough yet. Add tasks to see progress.</p><p style="margin-top:12px;color:var(--ink-2)">Open project ›</p></div>
+</div>
+<div class="row" style="margin-top:16px"><button class="primary">New task</button><button>Save draft</button><button class="ghost">Archive</button><input placeholder="Write the launch announcement"><span class="tabs"><a class="on">All</a><a>Mine</a><a>Overdue</a></span></div>
+
+<h1>Charts</h1>
+<div class="row" style="align-items:flex-start;gap:48px">
+<div><p class="hero">25</p><p class="meta" style="margin-bottom:8px">open tasks, down from 52 in August</p>
+<svg width="400" height="176" viewBox="0 0 400 176"><line class="zero" x1="36" y1="150" x2="380" y2="150"/>
+<polyline class="ink-line" points="40,38 70,45 100,52 130,62 160,59 190,73 220,80 250,90 280,101 310,112 340,122 370,132"/>
+<circle cx="370" cy="132" r="4" style="fill:var(--accent);stroke:var(--paper);stroke-width:2"/>
+<text x="0" y="44">Open</text><text x="40" y="168">Aug 24</text><text x="342" y="168">Nov 9</text></svg></div>
+<div><svg width="100" height="24" viewBox="0 0 100 24"><polyline style="fill:none;stroke:var(--ink);stroke-width:1.25" points="0,4 10,6 20,7 30,9 40,8 50,11 60,12 70,15 80,16 90,18 96,20"/><circle cx="96" cy="20" r="2" style="fill:var(--accent)"/></svg><p class="meta">sparkline 96×24, in table rows only</p></div>
+</div>
+
+<h1>States</h1>
+<div class="grid">
+<div class="card" style="text-align:center"><svg width="40" height="28" viewBox="0 0 40 28"><rect x="10" y="4" width="20" height="18" rx="2" fill="none" style="stroke:var(--ink-3)"/><path d="M14 10h12M14 15h8" style="stroke:var(--ink-3)"/><line x1="2" y1="26" x2="38" y2="26" style="stroke:var(--line)"/></svg><p style="color:var(--ink-2)">No tasks match these filters.</p><a style="color:var(--accent)">Clear filters</a></div>
+<div class="card"><p class="meta">Loading</p><div class="skel" style="width:70%"></div><div class="skel" style="width:45%"></div></div>
+<div class="card"><p class="meta">As of 9:12 AM <a style="color:var(--accent)">Refresh</a></p><p style="opacity:.4">Website relaunch, 25 open tasks</p></div>
+<div class="card"><p><strong>Couldn't load this week's tasks.</strong> <a style="color:var(--accent)">Try again</a></p></div>
+</div>
+<div class="callout" style="font-weight:400;color:var(--ink-2)"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M7 6.2v3.8M7 4.1v.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Tasks from the old tracker arrive overnight.</div>
+</body></html>

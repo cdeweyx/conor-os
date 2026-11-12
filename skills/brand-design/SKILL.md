@@ -1,0 +1,88 @@
+---
+name: brand-design
+description: >
+  Turns a product's minimal DESIGN.md into a full brand (idea, name, type,
+  color, mark, motion principles, voice) and swaps it into the product's
+  tokens. Use when the user says "brand", "branding", "brand identity",
+  "rebrand", "logo", "wordmark", "README", "it looks generic",
+  "it looks AI-made", "give it a personality", or at zero-to-one's Branding
+  step. Do NOT use for the name alone (product-naming), the first DESIGN.md
+  (hifi-design), a decorative visual (visual-assets), motion
+  (motion-design), or a marketing page (landing-page).
+---
+
+# Brand design
+
+A brand is one idea that every token can trace back to. Left alone, a model lands on the statistical center of design: cream with terracotta, Fraunces and Inter, a letter in a circle, in 97 to 100% of answers when one repo measured it. Bans don't fix that, they move it to the next default. What works is an idea taken from the product's own subject, a forced choice across a wide, reference-led set of directions, a test on every default ("would I propose this for another brand in this category?"), and critics who judge the branded product, not a pretty board. In a data-dense app the brand lives less in color than in the neutral's tint, the numerals, a display cut for headings, and a written limit on where the accent may go.
+
+The agent designs; scripts measure. Gates are only for what's measurably broken (contrast, license, fonts actually loading, the mark at 16px). Everything else is judgment, labeled as judgment, and the user makes the calls.
+
+Read `references/preferences.md` every run, before step 1 (the user's picks from past brands and the moves already used), `references/kickoff.md` before step 1, `references/directions.md` before step 4, `references/tells.md` every run, before any direction is drawn, `references/levers.md` before the sprints, and `references/rubric.md` before the critic loop. A repo's README (its mark, hero, and top fold) follows `references/readme.md`, with or without a full brand run.
+
+## Where it sits
+
+zero-to-one's Branding step, in Personal mode right after design and before tech planning (or at the start of Go live's Design step when Personal skipped it). It runs after hifi-design has made DESIGN.md v0 with every value a token (none yet: stop and run hifi-design first), before any code, so the plan takes the brand as a given and every component is built on it once. In zero-to-one it takes the full path; the light path below is for a small tool the user says doesn't need one. **Before the build there's no product running:** step 8's three branded product screens are the hardest hi-fi surfaces duplicated onto the brand file and re-tokened (the Paper-down fallback builds them from hi-fi screenshots), and step 10's apply sets the tokens in DESIGN.md and on the Final file's token set, the one write brand makes to Final. Its repo work (the swap tests, the visuals audit, the icon export, `/press`, any ticked menu item) is listed under the Brand section as owed work, which tech planning files into the epic, and the first build milestone's light close checks the brand on the running product. When code already exists (an existing product, or Go live after Personal skipped Branding), step 10 runs as written. It calls product-naming for the name, visual-assets to regenerate visuals, motion-design with the motion principles, and the `critic` role. It works on the Paper canvas (hifi-design's `references/paper-loop.md` holds the dialect) and in the product repo. Brand work gets its own Paper file, "<Product> · Brand", never the Final file (Final is near Paper's size limit on a real product, and brand makes many explorations): pages "🚧 Directions", "🚧 Marks", "🚧 Sprints", and "🏁 Brand" for the signed-off board. The user reviews and comments there; read every thread each round. If Paper is down, build the boards as HTML from the real app (re-tokened screenshots) and move them in when it's back, rather than waiting. The brand itself lives in one Brand section at the top of DESIGN.md, holding what would survive a complete visual redesign, with tokens below it carrying the values (`references/brand-section.md` is the template and says when to split it out).
+
+## Light path, for small personal tools
+
+A small personal tool skips the critic loop and the sprints, but keeps the interview, the choice, and its own new Paper file, since a shared file mixes products: a kickoff of at most five questions with pre-filled answers (`references/kickoff.md`), one reference pass (design-sources plus the best-designed products in the tool's own category, annotated), then two or three directions drawn on that Paper file, each showing the main surface, not just a mark. The user picks one, and the build rolls from it; the light path still ends in the user's pick between two or three directions.
+
+## Where the user decides
+
+Eight calls, and everything between them is the agent's work. Name each in chat when it comes, with a lean and a runner-up and the word wanted back.
+
+1. Interview answers, zones, and the menu.
+2. The brand idea.
+3. The name, which is two calls inside product-naming (a shortlist, then the final name and a backup).
+4. References.
+5. The direction, in two picks: two or three from the wide round, then one full board. The big one.
+6. Each foundation sprint's pick.
+7. Sign-off after the critic loop.
+8. Applying it to the product.
+
+## The menu
+
+At kickoff the agent pre-ticks what the run makes from the docs and the user confirms or changes it, inside call 1's summary. Always: the mark and wordmark, the tokens, the Brand section, the branded product, the icon set, the press route. Optional: a hero or landing treatment, social templates, an OG card, a deck cover, the brand kit generator, a case-study page. Unticked items aren't made; one asked for later gets made off the signed-off tokens and mark, the same way step 10 makes it.
+
+## The steps
+
+1. **Inspect, pre-work, then interview.** Before asking anything, read the product doc, DESIGN.md, the token file, and screenshot every surface. Classify the product: UI-rich (tables, charts, dashboards: the brand has to show in components and data surfaces) or content-rich (the brand lives in type). List what's worth keeping and why, each as role, value, source, and recurrence; a one-off literal is an accident, not a decision, and doesn't get promoted. Never take a real brand's colors from memory (a competitor's, the product's live site): fetch its CSS, cluster the recurring hex, cite the URL (the brand-truth rule from Hallmark, an open-source design skill). Then do the kickoff work in `references/kickoff.md`, so the user reacts rather than answers blank: pre-fill every interview answer from the docs as an assumption, lay out the user's references and three to five competitors as one grid, and build four to six idea zones from the product's own objects. Then at most five questions, one at a time, each with its assumed answer so a reply can be "yes": the business half confirms or corrects the assumptions, the brand half runs over the grid and zones (which zones, which references, and why), and every reference the user supplied gets one line in the user's words on what they like about it. Summarize it all, with the menu, for one yes (call 1). If there's no specific audience, difference, or credible promise, stop and say so; visual polish doesn't fix a positioning problem.
+
+2. **Brand idea.** Write twenty candidate sentences from the zones the user chose and the interview, then propose one with a runner-up. Each is one line, on the nose (a stranger gets it at a glance; a clever line that needs explaining loses), fails if a competitor's name fits it, and names no adjective a template could claim. Run the competitor test on the ones the user likes and show the result per line. Add three attributes, the three clichés of the category to avoid, and the competitors' colors and type to steer clear of. The user approves or redirects (call 2).
+
+3. **Name.** Run product-naming when the product has no name or the user wants a new one; skip it otherwise. The name lands before the directions so every card shows the real wordmark.
+
+4. **References.** The directions are built from these, so cast wide: twenty to thirty, starting from the chosen zones' images and the grid's references (annotate them, don't search again), then design-sources (Brand and identity first, then Personal curation: Savee, Cosmos, Are.na), Mobbin, real brands, posters, objects, and any more the user shares (screenshots welcome; each gets its why line, as in step 1, and a live site they point at gets an explain-interface read; the wide pull doesn't). Pull beyond the category and beyond light-ground UI on purpose: dark grounds, color grounds, print, broadcast, packaging. Each gets a line of technique (type ratio, hue count, ground, composition, how the mark is built), one trait to borrow, and one not to copy. One anti-reference. Group them by direction seed, the chosen zones as the first seeds, and check the groups against the spread floors in `references/directions.md` before showing; a missing dark or color-ground group means searching beyond the zones, not fewer cards. Show what else was considered and why it was cut. The user adds or vetoes (call 4).
+
+5. **Directions.** Two rounds, built from `references/directions.md`. Round 1 is wide: ten to twelve direction cards, each anchored on a reference from step 4, planned as a table against the spread floors before any card is drawn. Each card is one hero frame designed freely on the "🚧 Directions" page, never a style override on the live app, which inherits the app's ground, layout, and chart. Run the reflex test from `references/tells.md` on the set, then the round 1 pre-show pass in `references/rubric.md`. Recommend a lean and runner-up; the user picks two or three (call 5a). Round 2 gives each pick a full board with every field in `references/directions.md`, including five to eight rough marks from Recraft (a vector image model, through Paper's built-in generation when the user has it on; idea sketches, never the final mark) and the product's hardest screen redrawn in the direction, the same screen on every board, with the move reaching the components, chart and table included. Run the round 2 pre-show pass, recommend one with a runner-up; the user picks (call 5b). A hybrid or a color-only preference ("A, but C's colors") follows the picking rules in `references/directions.md`.
+
+6. **Foundation sprints.** Inside the pick, one foundation at a time, in order: type, color, shape and materials, mark and wordmark, icons and chart tone, motion principles, voice. Spend on the high-weight levers in `references/levers.md` first. Each sprint shows two or three options on real screens, the user picks (call 6), the DESIGN.md tokens change, and the canvas re-renders before the next sprint opens. The color sprint settles both themes at once on hifi-design's ground (black or near-white, dark the default); a theme left for later gets designed under pressure at review. The mark: a sketch sheet of about twenty generated from the chosen direction's mechanism (any sketch from the direction rounds can join, the user's favorites first), the user picks one or two, then it's rebuilt as code (a wordmark from a licensed face's outlines with `scripts/wordmark.py` and one deliberate cut; a symbol constructed on a 24-unit grid with every anchor on a grid line), then put through the test sheet before anyone sees 512: 16, 32, and 64px, one color, reversed, a squint (blurred), mirrored and rotated for readings nobody meant, a competitor shelf (the mark in a row with three to five competitors' at the same size), and for a wordmark, a pace row: every letter with the same movement, the one cut belonging to the whole word so no letter reads more decorative than the rest, no dot or terminal that pulls the eye, no stray negative space between pairs. The sheet is a hard checkpoint: a mark that fails a size, color, or squint row gets simplified (fewer, thicker parts); a wordmark that fails the pace row gets its spacing or cut redone; one that fails the mirror or shelf row (an unwanted reading, or a rival's look) gets replaced by the next pick from the sheet, since simplifying a lookalike keeps the likeness; and nothing downstream is built on it until it passes. Motion leaves this step as three named principles in DESIGN.md for motion-design to build; voice leaves as five adjectives, a sentence-case rule, banned words, and three before-and-after lines from the product's real copy.
+
+7. **Gates.** Build the final brand board as one HTML page off the tokens (mark on light and dark, the 16/32/64 strip, swatches with roles, type at three sizes, a column of real numbers, one real screen fragment) and place its screenshot on the canvas. Run `node ~/.claude/skills/brand-design/scripts/check.mjs` against the token file, that board page, and the mark. Fix every FAIL; each WARN gets fixed or a one-line reason. Then run the a11y MCP's contrast check on every new text-on-background pair. Critics only see work that's already clean.
+
+8. **Critic loop.** Three `critic` agents in fresh contexts (Model: critic role), each given the final board, three branded product screens, a copy sample, the line-up sheet, and the Done before list from `references/preferences.md`, scored and run by `references/rubric.md`. Never the board alone: a mark is an empty vessel and gets judged by how it's used. The user signs off (call 7), never a critic.
+
+9. **Write it down.** Fill the Brand section from `references/brand-section.md`, set the token values, record each value's provenance (chosen in which sprint, or derived from what), and move the board and the mark sheet to the "🏁 Brand" page of the brand file.
+
+10. **Apply.** On the user's yes (call 8), in the product repo on a branch: swap the token values, never component structure, layout, chart form, or any number's placement. When a new value breaks a layout (a display face that wraps a column), don't touch the layout: fix the token mapping first (a display face belongs on headings only), and bring it to the user as a call only when no mapping holds. Run the swap tests in `references/levers.md`: every surface in every mode before and after, the stress views in light and dark, changed baselines accepted by name with a reason. Then audit every generated visual against the idea and the palette roles and regenerate the failures through visual-assets. Theme switching doesn't animate, since a full-page color transition flashes every surface at once. Hand back two more pieces off the signed-off mark: the icon export (favicon SVG plus 16 and 32 PNG and ICO, apple-touch 180, app icon 1024 with no alpha, a maskable 512 with the mark inside the center 80%) through favigen (Rust CLI, SVG in, writes the manifest) or `npx icons-cli`, and a `/press` route: the marks on light and dark as SVG and PNG, a boilerplate paragraph in the brand voice, three screenshots of the branded product. Then make only what else the menu ticked, off the signed-off tokens and mark (imagery through visual-assets): a hero or landing treatment, social templates, an OG card, a deck cover; a brand kit generator, a small local page under `mockups/brand/kit/` that renders the system's variations (backgrounds, OG card, social frame, deck cover) with the palette, the rules for how the system's shapes and imagery repeat, and copy slots as controls, plus the Brand section's Scaling line on scaling the graphics with visual-assets' image tools; a case-study page of six panels (mark, wordmark, palette and type, the hardest screen, the hero, one object) under `mockups/brand/case-study/`, linked from `/press`.
+
+## Skill pause
+
+Run authoring-skills' Closing a skill update (the skill pause) at the end of every run. What goes where in this skill: picks and the run's motifs and moves (its Done before lines) into `references/preferences.md`, a tell the critics or the user caught into `references/tells.md`, a process change into the steps.
+
+## Things that go wrong
+
+- Adjectives instead of an idea. "Modern, clean, premium" resolves to the default every time; the mechanism sentence is what forces a choice.
+
+## Checklist
+
+- Surfaces screenshotted, product classified, grid and zones built before the first question; questions one at a time with assumptions, a why line per user reference, then one summary with the menu the user said yes to.
+- Brand idea fails the competitor test; clichés and competitor colors named; name settled through product-naming or skipped with a reason.
+- References cast wide (twenty or more, dark and color grounds included) as technique text with borrow and don't-copy traits, grouped by direction seed; one anti-reference.
+- Wide round of ten to twelve reference-led cards met the spread floors, reflex test written, pre-show pass ran, the user picked two or three.
+- Full boards differ on two axes, each on the real screen with the move in the components, pre-show pass ran, the user picked one.
+- Sprints in order, each picked on real screens and written into tokens before the next.
+- Mark rebuilt as code, `currentColor` fill, passed every row of the test sheet before any board used it.
+- `check.mjs` has no FAIL; contrast proven on the token pairs.
+- Three blind critics on board plus product plus line-up; caps applied; rounds logged; the user signed off.
+- Brand section written with provenance and the precedence line; apply on a branch with baselines accepted by name; visuals audited; icon set exported, `/press` live, every ticked menu item made.

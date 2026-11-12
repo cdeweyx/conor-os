@@ -1,0 +1,77 @@
+{
+  "_comment": "Third-party skills, installed into skills/<name> by skills/authoring-skills/scripts/vendor-sync.py and gitignored. Their files are never committed here. frontmatter holds our only edits (overrides applied on install); agents lists upstream agent files copied into ~/.claude/agents.",
+  "skills": [
+    {
+      "name": "better-ui",
+      "repo": "https://github.com/jakubkrehel/skills",
+      "path": "skills/better-ui",
+      "commit": "60bf140e43c98b248e6594487384ec967e89d98a",
+      "author": "Jakub Krehel",
+      "license": "MIT",
+      "notices": ["LICENSE"],
+      "exclude": ["agents"],
+      "frontmatter": {
+        "description": "Polishes surfaces, icons and motion with exact values (radius, optical alignment, shadows, icon states, animation). Use when building UI components, reviewing frontend code, or working on hover states, shadows, borders, icons, micro-interactions, or enter and exit animations, or when the user says \"make it feel better\", \"feels off\", \"polish this\", \"design details\", \"stagger animations\", \"optical alignment\", \"image outlines\", \"icon stroke weight\". Do NOT use for accessibility (better-accessibility), a designed surface on the canvas (hifi-design), or judging motion code (review-animations)."
+      }
+    },
+    {
+      "name": "better-accessibility",
+      "repo": "https://github.com/jakubkrehel/skills",
+      "path": "skills/better-accessibility",
+      "commit": "60bf140e43c98b248e6594487384ec967e89d98a",
+      "author": "Jakub Krehel",
+      "license": "MIT",
+      "notices": ["LICENSE"],
+      "exclude": ["agents"],
+      "frontmatter": {
+        "description": "Reviews and fixes keyboard and focus behavior, ARIA, accessible names, forms, screen-reader announcements, motion and zoom against WCAG 2.2, with every finding citing a criterion or a task someone can't complete. Called at build's UI sweep. Use when the user says \"accessibility\", \"a11y\", \"WCAG\", \"keyboard navigation\", \"screen reader\", \"focus ring\", \"aria\". Do NOT use for contrast on its own (the a11y MCP), for visual polish (better-ui), or for critique of the design (impeccable)."
+      }
+    },
+    {
+      "name": "review-animations",
+      "repo": "https://github.com/emilkowalski/skills",
+      "path": "skills/review-animations",
+      "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
+      "author": "Emil Kowalski",
+      "license": "MIT",
+      "notices": ["LICENSE"]
+    },
+    {
+      "name": "apple-design",
+      "repo": "https://github.com/emilkowalski/skills",
+      "path": "skills/apple-design",
+      "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
+      "author": "Emil Kowalski",
+      "license": "MIT",
+      "notices": ["LICENSE"],
+      "status": "parked, explicit invocation only until a gesture-heavy or phone-first product needs it",
+      "frontmatter": {
+        "disable-model-invocation": "true"
+      }
+    },
+    {
+      "name": "mobile-native",
+      "repo": "https://github.com/emilkowalski/skills",
+      "path": "skills/mobile-native",
+      "commit": "f1090bec277140d02ed202440185ad9d02ac1490",
+      "author": "Emil Kowalski",
+      "license": "MIT",
+      "notices": ["LICENSE"],
+      "status": "parked, explicit invocation only until a gesture-heavy or phone-first product needs it",
+      "frontmatter": {
+        "disable-model-invocation": "true"
+      }
+    },
+    {
+      "name": "impeccable",
+      "repo": "https://github.com/pbakaus/impeccable",
+      "path": ".claude/skills/impeccable",
+      "commit": "414603bf14c7a344edb466bb1f85690c77ce8b7d",
+      "version": "4.8.0",
+      "author": "Paul Bakaus",
+      "license": "Apache-2.0",
+      "notices": ["LICENSE", "NOTICE.md"],
+      "keep": ["scripts/bin"]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+---
+name: landing-page
+description: >
+  Designs and builds a landing page or marketing site that reads as Linear,
+  Vercel, or Stripe tier rather than a template. Use when the user says
+  "landing page", "marketing site", "homepage", "launch page", "waitlist
+  page", "pre-order page", "hero section", "pricing page", "make the site
+  look like Linear", or at zero-to-one's landing page step. Do NOT use for
+  screens inside the product (hifi-design), polish without the strategy
+  (better-ui, impeccable), the hero visual alone (visual-assets), or motion
+  alone (motion-design).
+---
+
+# Landing page
+
+A landing page wins one intent: one offer, one audience, one primary action. What separates the tier from a template isn't a rulebook of fonts and colors. Measured across Linear, Vercel, Stripe, Raycast, Resend, and Clerk, it's four things: one idea taken from the product's own subject, the product shown as live interface instead of a framed screenshot, restraint in motion, and a dozen one-line finishing details templates skip. A page that removes the template tells without adding substance still loses; richer pages beat cleaner thin ones in blind tests. So the skill is a process that forces the idea and the substance first, and checks the finish by machine.
+
+Read `references/message-md.md` at the message step (the MESSAGE.md template and its evidence rules), `references/craft.md` before the copy deck (the hero layout is picked before the copy) and again at the direction step, `references/rubric.md` before the direction step and again before the gate, and `references/product-ui.md` before building the product into the page. `references/anatomy.md` holds page shapes for products that aren't a software signup, and the probe page that asks for money before anything's built. `references/polish.md` holds the finishing details and the ship list; `references/motion.md` the motion budget. `scripts/check.mjs` runs the gate. Read `references/preferences.md` every run, before intake; it holds the user's picks from past pages and the build log.
+
+## Where it sits
+
+It runs on code in zero-to-one's Go live mode, at its Design step: a separate marketing site runs after the Quality step and the end-to-end review, so its hero shows the finished, verified product; earlier only for a waitlist page; or on its own for an existing product. When the product's signed-out app is its front door (one front door, no separate marketing site), the page isn't a separate later step: product-shaping sets its sections and order, and this skill runs from that page's Design Needed issue, with step 4 starting from the shaped sections instead of a blank argument. It extends the product's DESIGN.md rather than inventing a second system; when there's none, run hifi-design's taste interview and DESIGN.md step first. It calls visual-assets for the hero visual (a landing page is always a front door), better-ui and impeccable at the gate, the `critic` role for the critique, and motion-design for the signature move. break-it is its own step and doesn't run inside this one. A probe page (`references/anatomy.md`) runs before any build, with no product to show: steps 1 to 5, then step 8's still build (on DESIGN.md if there is one, with no taste interview if not) without the live-thing hero review, step 9's gate, then step 12's ship list; steps 6, 7, 10, and 11 and their checklist lines are skipped, since the week's money judges it, not a critic.
+
+## The steps
+
+1. **Intake.** Read `MESSAGE.md` first when it exists (the product repo, beside DESIGN.md): it holds the buyer's words, their objections, and what each channel's visitors already know, so ask about those only where it's thin; with no MESSAGE.md, leave them to step 2. Ask for what's missing one question at a time, each with your assumed answer, then summarize the answers for one yes: the one action and what counts as a conversion; the offer; who it's for; the traffic source; the proof that exists (named quotes, logos with permission, numbers); the imagery that truly exists (real screens, a demo, nothing); the main competitor and other rivals worth reading; two references and one anti-reference. Answer anything left open with a stated assumption and keep going. Decide index or noindex here: ad-only and time-bound pages are noindex.
+
+2. **Message.** The page's words come from buyers, not from us. With no `MESSAGE.md`, build it now from public sources, since every headline, claim, and objection after this reads from it: the product doc, rival reviews, HN, Reddit, and X threads, and each rival's headline history from growth-strategy's `teardown.mjs hero`. Follow `references/message-md.md` for the template, the sources, and the evidence rules; a theme under its floor says thin and the page goes on a stated assumption, never an invented quote. Write it beside DESIGN.md and show the user before the argument. When it exists, read it and go on; re-run it when the user asks or customer calls have come in since its date.
+
+3. **Inventory and idea.** List eight to twelve things only this product has: its objects, its numbers, its data, its users' words from MESSAGE.md, the visual tradition of its domain. Write the idea as one sentence: "On this page, X becomes Y." Then the competitor test: put the competitor's name in it. If it still works, it's the category, not the product; rewrite until it fails for them. Don't build until it passes, because this is where strong and weak pages differ most.
+
+4. **Argument.** One line per section: the claim, and the proof that sits beside it. A section without a claim gets cut, which is how the page escapes the stock hero, three features, testimonials, FAQ sequence. When the product isn't a software signup, or the page is a probe, read its job in `references/anatomy.md` first; it moves the action and changes which sections exist. The first screen has a floor: a literal headline that starts where MESSAGE.md's awareness level for this page's traffic puts it (the product for visitors who know it, the desire or the problem in their words for visitors who don't), one supporting sentence that with it tells a five-second reader what you sell, one primary action, one proof signal, and the product, operable: one live thing the visitor can use, made from the idea, with a plain fallback without script. With no customers yet, the proof is the product's own evidence (a benchmark, a number the demo fixture produces, a live component the visitor can try), never an invented logo or quote. When MESSAGE.md puts the market at sophistication stage 3 or later, rivals have worn the plain claim out, so add a mechanism section built on its mechanism sentence, with the product doing it as the proof. An FAQ is an objection tool, not a required section. The last section repeats the one action. Then the cold structure review, skipped when product-shaping already ran it on this structure: one `critic` (Model: critic role) gets only the section list with each claim and proof, these principles (the idea sentence, claim plus proof per section, the first-screen floor, the closing action), and screenshots of three tier-one pages at 1440 (taken now, reused at step 6), and returns a final structure with one line per change. It catches a first screen that isn't live, a section repeating its neighbors, a missing closing band. Give your verdict on each change; the user's call overrides the critic's.
+
+5. **Copy deck.** The whole page as plain text before any markup, written in the user's voice (writing-style). Full content, real numbers with odd final digits, sentence case, headlines two lines or fewer at 1440 and 390, CTAs a verb plus what they get ("Get started" is fine). Every claim passes three questions or gets rewritten: can the reader picture it, could it be proven false, and does it fail with the competitor's name in it? A fact nobody has (a number, a quote, a date) goes in as `[NEED: what, and where it would come from]`, never a made-up value; each one is filled or its line cut before the build, and the two a visitor needs to act may ship as `references/polish.md`'s missing-fact slots. Run `references/rubric.md`'s banned-phrase list and its Copy axis. The user reads the deck and says yes before any pixel; the reference pass can run while they read.
+
+6. **Reference pass.** Playwright screenshots of three tier-one pages and the anti-reference at 1440 and 390, plus Mobbin `search_sections` for the section patterns the argument needs (galleries in the design-sources skill). Read the tier-one pages through explain-interface so the numbers are measured, not estimated from a screenshot. Annotate each as technique text: hero layout, headline size, weight, and tracking, hue count, container widths, what moves. The build gets the text, not the images, so it borrows the thinking instead of the pixels.
+
+7. **Direction.** Write a compact token plan from DESIGN.md, the annotations, and the build log in `references/preferences.md`, and name the one place the page spends its boldness (usually the hero's live product, sometimes a statement section or a number). Then run the collision test in `references/rubric.md`; no markup until the plan passes it. `references/craft.md` has the measured values for type, layout, surfaces, and imagery.
+
+8. **Build it still.** Hero first, at 1440 and 390, in at least two compositions (centered and split at the least, read off the reference pass's own heroes) before polishing either: the layout is picked first (build's `references/design-loop.md`, "Layout before polish"). The product goes in as live markup built from a real fixture, by the loop in `references/product-ui.md`; a screenshot only when the screen can't be rebuilt in a day. Open the hero visual or backdrop through visual-assets. Then the cold hero review: one `critic` (Model: critic role) gets only the first screen at 1440 and 390 and answers five questions, each yes or no with one line: what's sold and to whom after five seconds, whether the idea shows, whether it would fail for the competitor, whether the live thing is there, and which tells from `references/rubric.md` appear. Fix every no, then show the user and get their look before any other section exists, since every section inherits the hero's mistakes. Then each section from its line of the argument, one at a time, never regenerating the whole page; adjacent sections differ in container width or alignment. No motion yet.
+
+9. **Gate.** Run `node ~/.claude/skills/landing-page/scripts/check.mjs <url>` from the product repo (Playwright installed), on the production build for the last pass, and fix every FAIL; each WARN gets fixed or a one-line reason. Exit 2 means a check couldn't run: that's a failure, never a pass. Scan the screenshots for the tells in `references/rubric.md`. Then better-ui (with build's `references/judge-siblings.md`) and `/impeccable polish` on the page. The critics only see a page that's already clean, so their findings are about taste, not mechanics.
+
+10. **Blind critique.** Three `critic` agents in fresh contexts (Model: critic role), each given screenshots at 1440, 768, and 390 plus two gold pages from the reference pass at the same widths, no brief, no code, no prior scores. They score all three pages against `references/rubric.md` with its caps, rank them, and answer which is the generated one and why. Take the median per page; the planner role turns the findings, the user's notes, and fresh inspiration into the next round's plan (build's `references/design-loop.md`, "The planner frames every round"), the designers apply it, and all three are rescored. Three rounds at most; stop when ours ranks first or a round closes the gap by under a point. Log each round's rank and gap to `critique-landing.md` beside the page. The user's yes ends it, never a critic; on a no, their notes set a new round outside the cap.
+
+11. **Motion last.** Run motion-design for the one signature move, inside the budget in `references/motion.md`. Rerun the gate on the production build: reduced motion, the animation count, nothing left invisible by a reveal that didn't fire.
+
+12. **Ship.** Walk the ship list in `references/polish.md`. Report the idea sentence, the final scores, what's still sample content (missing-fact slots, unwired forms and the endpoints they need), and which steps ran and which were skipped.
+
+## Skill pause
+
+Run authoring-skills' Closing a skill update (the skill pause) at the end of every run. What goes where in this skill: a pick into `references/preferences.md`, a value into the reference that owns it, a process change into the steps above. Add the run's line to the build log (hero layout, section openings, palette), and turn any WARN explained the same way three runs running into a preferences line.
+
+## Things that go wrong
+
+- The stock outline. Skipping the argument ships hero, three icon cards, logos, testimonials, FAQ, CTA, which is every template.
+- Clean but thin. Tells removed and nothing added. The tier's pages are dense with real interface fragments and full content.
+- Invented proof. A made-up logo wall or quote is worse than none; use what intake found, or a number from the product.
+- Global taste bans standing in for direction. Banning Inter or gradients doesn't make a page good (most of the tier loads Inter); tokens come from DESIGN.md and the annotations.
+
+## Checklist
+
+- Intake asked one question at a time with assumptions, summarized for a yes; index decision made.
+- Idea sentence written and fails the competitor test; anatomy read if it isn't a software signup or is a probe.
+- Every section has a claim and its proof; first-screen floor met, live thing included; cold structure review ran or shaping already ran it.
+- Copy deck approved before markup; banned phrases clear.
+- References annotated as technique text; boldness spent in one named place; collision test passed.
+- Product built by the product-ui loop; cold hero review before other sections.
+- `check.mjs` exits 0 on the production build; WARNs fixed or explained; tells scan clean; better-ui and impeccable polish ran.
+- Critique: three blind critics, rank and gap logged, capped rounds; motion added last, within budget, gate rerun.
+- Ship list complete; build log line written; steps that ran and were skipped reported.
