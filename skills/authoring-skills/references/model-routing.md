@@ -12,7 +12,7 @@ Opus 5.5 is the default for everything. Fable 5.2 runs two kinds of agent: resea
 |---|---|---|---|
 | Main chat | Opus 5.5 | high; medium while iterating, low in a tight loop | Shaping, design, copy, build, every conversation with the user |
 | `researcher` agent | Fable 5.2 | medium | One research lane: a big or vague corpus, many calls, a report back |
-| `planner` agent | Fable 5.2 | high | Tech planning and architecture: a biased approach, the tech plan draft, the revisions between critic rounds. Every design round's plan: the user's feedback, critics' findings and inspiration turned into the designers' direction |
+| `planner` agent | Fable 5.2 | high | Tech planning and architecture: a biased approach, the tech plan draft, the revisions between critic rounds. A design round's plan, at hifi-design's direction rounds only (a direction not yet picked; never polish or feedback inside a picked one): the lead's packet and live inspiration turned into the designers' direction, resumed across rounds |
 | `critic` agent | Opus 5.5 | medium | Fresh-context critique of one artifact: a screenshot against a scorecard or DESIGN.md, or a tech plan from one panel seat |
 | `worker` agent | Opus 5.5 | high (build's Small-issue implementers start at medium; their fix rounds run at high) | Any other delegated task: checks, generation, a bounded edit |
 
@@ -32,6 +32,8 @@ Opus 5.5 is the default for everything. Fable 5.2 runs two kinds of agent: resea
 - Fable's delegation follows the harness more than the effort level. With a minimal tool for starting subagents it rarely starts one; in a harness whose prompts invite delegation, like Claude Code, it delegates readily, and at xhigh and max 5.2 also spawns self-review subagents, which 5.1 didn't ([Fable 5.2 guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2#set-expectations-for-subagents)). Pinning sets a subagent's model, not how many get spawned, so the planner and researcher files say not to spawn.
 - Watch item (from a roundup measured on 5.1; the 5.2 guide says nothing either way): Fable at high argued with feedback. The planner applies the critic panel's verdicts, so at the next tech plan, count applied vs reargued verdicts in the round log, then keep or cut this line.
 
+- Cost is mostly context re-read, not thinking: every call re-reads the whole context, so a session's cost grows with roughly the square of its length. Build keeps implementers small by chunking issues. Main sessions get a nudge instead: `scripts/context-nudge.py`, a PostToolUse hook in `~/.claude/settings.json`, tells a main session past 400k (then each further 100k) to hand off at its next clean break. Subagents are skipped.
+
 ## Evidence behind the rule
 
 From a research pass across Anthropic docs, X, HN, Reddit, blogs, and YouTube in September 2026:
@@ -40,6 +42,7 @@ From a research pass across Anthropic docs, X, HN, Reddit, blogs, and YouTube in
 - "Plan with Fable, execute with Opus" is the most repeated pattern. Fable earns its credits on architecture and on vague research over a large corpus, where it reads more and goes deeper.
 - Incorporating feedback is Opus's clearest win. It takes notes without a fight; Fable 5.1 at high effort argued.
 - Design and screenshot reading favor Opus. Copy favors Opus for clarity; Fable is fine for long exec-audience drafts. Neither is a good editor.
+- Pixel-art stamps are the one place a run found Fable drawing better: two Opus rounds on a pixel-art footer scene came out "clean but plain" next to the Fable-drawn hero art at 8x, and the scores went flat; Conor put Fable on the last round, which drew specific buildings and lifted the gold comparison from 5 to 6. One case, a watch item: retest when either model ships.
 
 ## Prices and the 5.2 update
 
@@ -59,3 +62,4 @@ From the launch post and a second-source check in November 2026:
 - Researcher told to finish its lane through ordinary failures. Anthropic's Fable 5.2 guide: at medium effort the model ends turns early with a list of what's left, and the researcher runs at medium with nobody to say continue.
 - Critic and worker pin `claude-opus-5-5` instead of the `opus` alias, so an Opus release is an edit too. `skill-budget.py` fails any pin missing from the "Sweep filed for" line.
 - Model notes retested against the Fable 5.2 guide in the model sweep. Dropped the three with no 5.2 source (the 11x effort dial, Claude Code defaulting Fable to medium, Fable overshooting limits); reworded the spawning note to the harness cause the guide gives; dated the arguing note as a watch item; dropped the Fable-window option for tech planning. The per-token price check dates from when a vendor's per-task chart (Opus at max effort) was read as Fable 5.2 being cheaper.
+- The design planner runs at direction rounds only, by Conor's preference. In six days, 60 design-planner runs cost $548 on Fable, 20 of them framing polish or feedback inside a picked direction.

@@ -25,7 +25,7 @@ Contents: After each revision · Table lens · Cross-surface pass · Done checkl
 - Copy: no "great," "strong," or exclamation marks on results; every error names the fix. Labels, buttons, headings, and captions end without a period; a line of two or more sentences keeps them.
 - Data: diff every number and name against the pasted rows, then against each other. A heading that says 1,112 invoices over a sentence that says 1,140 is the first thing a skeptic finds. Then count repeats: each fact appears once per screen.
 
-## Table lens (usability laws, paraphrased; run at refine and polish)
+## Table lens (usability laws, paraphrased; run in the polish loop)
 
 - Fitts: sort headers and row actions have a hit area of the whole cell, not the glyph.
 - Common region and proximity: a number's comparison sits inside the same cell group; column groups read as groups without vertical rules.

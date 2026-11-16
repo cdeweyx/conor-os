@@ -37,7 +37,7 @@ I publish it from my private copy every week, minus anything too specific to me 
 
 - **[design-shaping](skills/design-shaping/SKILL.md)**: The design step end to end: journey, competitive look, wildly different explorations, convergence, hi-fi, Solution Details.
 - **[wireframe-explorations](skills/wireframe-explorations/SKILL.md)**: Three to five lo-fi options per surface, ugly on purpose, with real data.
-- **[hifi-design](skills/hifi-design/SKILL.md)**: One hi-fi pass per surface on the Paper canvas, from DESIGN.md and tokens to the build handoff.
+- **[hifi-design](skills/hifi-design/SKILL.md)**: The one hi-fi loop on the Paper canvas, for the design step and build's Design Needed issues alike, at Full or Quick weight, from DESIGN.md to the build handoff.
 - **[visual-assets](skills/visual-assets/SKILL.md)**: Turns a sketchy decorative visual (hero, backdrop, illustration) into a striking one, scored by blind critics.
 - **[motion-design](skills/motion-design/SKILL.md)**: Decides what should move at all, then specs and prototypes it into DESIGN.md.
 - **[explain-interface](skills/explain-interface/SKILL.md)**: Takes apart a site or effect someone shared: real CSS, tokens, and motion, and what transfers to ours.

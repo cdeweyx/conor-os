@@ -13,7 +13,7 @@ description: >
 
 # Product shaping
 
-Turn an idea into a validated spec through three phases: Frame, Research, Shape. Each phase ends with an explicit opt-in before the next starts, because research nobody agreed to is wasted and a shape built on an unconfirmed frame is wrong. The output is a product doc written per the product-doc skill. Load product-doc at the start: shaping uses its role, its seven framing questions, and its section guidance throughout.
+Turn an idea into a validated spec through three phases: Frame, Research, Shape. Each phase ends with an explicit opt-in before the next starts, because research nobody agreed to is wasted and a shape built on an unconfirmed frame is wrong. The output is a product doc written per the product-doc skill. Load product-doc at the start: shaping uses its role, its six framing questions, and its section guidance throughout.
 
 ## Your role
 
@@ -35,7 +35,7 @@ Start the way product-doc says (read it first, treat it as one input, ask what p
 
 **Launch shaping** is the mode for zero-to-one's Go live step 1: the same three phases on a product the user already uses, to take it public. Start from the existing doc (above), Personal's closing handoff, its "(Go live)" non-goals, and what real use showed; that use is evidence the first shaping didn't have.
 
-- **Frame.** The frame stays locked unless use broke it, so skip the seven questions, Other framings, and the keywords. The check-in asks only who the public user is, what they need that the user didn't, and what launch means here (a waitlist, open sign-up, paid from day one), then gives the confidence number.
+- **Frame.** The frame stays locked unless use broke it, so skip the six questions, Other framings, and the keywords. The check-in asks only who the public user is, what they need that the user didn't, and what launch means here (a waitlist, open sign-up, paid from day one), then gives the confidence number.
 - **Research.** The launch lanes in Phase 2 (comparable paywalls, metering, an open-source angle, funnel and landing references, growth fit), plus pricing. They run here, not through product-research, even with no company behind the idea.
 - **Shape.** The front door (Step 2's landing-page rule), pricing and the paywall (Step 2's pricing rule), accounts and sign-in, the legal pages, and the Success Metrics the personal tool skipped.
 - **Write.** The launch shape goes into the product doc as its own section, and the "(Go live)" non-goals move into it as goals or stay parked. Step 4's cold read runs on that section. Design Needed issues are filed as the split is agreed, as always, but in the Go live project's "Launch design" milestone with no blocker, since zero-to-one files no shaping issue; tech planning moves each into the milestone that ships its surface.
@@ -44,11 +44,11 @@ Start the way product-doc says (read it first, treat it as one input, ask what p
 
 *Goal: define the problem clearly enough to know what research to run.*
 
-Ask product-doc's seven framing questions one at a time, numbered ("Question 2 of 7, why now"). For each: ask, draft the answer in the user's voice from what they said, confirm, move on. One question per turn, because bundling three produces long answers to none of them and the user loses track of what's settled. If the user's opening message already answers some, say which and skip them. Push past the first answer on the job and on appetite; those two do the most work downstream. On question 7, offer a brainstorm if the user wants one: five to seven candidates, one line each with a take, ranked.
+Ask product-doc's six framing questions one at a time, numbered ("Question 2 of 6, why now"). For each: write your own answer first to a scratch file the user doesn't see, then ask the question bare (no take, no options, no lean), then once they've answered, draft the answer in the user's voice from what they said, show your pre-written take beside it with where it differs and what you'd push on, confirm, move on. Your take stays unbiased because it's written before theirs, and theirs stays unbiased because yours isn't shown until they've answered. The same holds for every interview question in any shaping or design interview. One question per turn, because bundling three produces long answers to none of them and the user loses track of what's settled. If the user's opening message already answers some, say which and skip them. A feature inside a product that's already shaped (its doc names the customer, the why now, the metrics) asks only the questions that doc doesn't answer for this feature, usually the job alone, and cites the doc for the rest. Push past the first answer on the job; it does the most work downstream. On question 6, offer a brainstorm if the user wants one: five to seven candidates, one line each with a take, ranked.
 
 Weave in throughout: is this unique thinking or table stakes (table stakes is fine, name it), why are we building this (make the user defend it), and is this a local fix for a broader problem (an "add a setting" request is often a symptom of a missing model or bad default).
 
-**Framing check-in.** Once all seven are answered, run product-doc's check-in (one line per question, what the user said, not your analysis), ending "Does this framing look right? If so, I'll propose a research plan.", and iterate on pushback until it's confirmed.
+**Framing check-in.** Once all six are answered, run product-doc's check-in (one line per question, what the user said, not your analysis), ending "Does this framing look right? If so, I'll propose a research plan.", and iterate on pushback until it's confirmed.
 
 **Other framings.** When the idea arrived as a solution ("build X", "add Y"), the user's framing is one of several, and research only asks what its framing points at. With the check-in, offer three problem framings the same idea could answer, one line each with the build it leads to ("users don't see what changed": state indicators; "users don't trust it's working": status and an audit trail; "users want it watched for them": digests and alerts), and say which you'd pick and why. The user keeps theirs, picks one, or merges, and the research plan asks that framing's questions. An idea that arrived as a problem skips this.
 
@@ -96,7 +96,7 @@ Customer research synthesizes existing signal; it shouldn't be written back as n
 
 Track 1 inline as it's gathered. Each research investigation in full as it completes, not condensed to a few bullets. The user needs to see the evidence. **Preserve source links** on every claim so anything can be verified in one click.
 
-Close the phase with three writes, because research that lives only in chat is gone next session: the raw reports to the research page, the synthesis to an appendix toggle in the doc, and Open Questions refreshed after the user has reviewed them.
+Close the phase with three writes, because research that lives only in chat is gone next session: the raw reports saved in the repo (product-research's same-day rule), one appendix line in the doc pointing at them, and Open Questions refreshed after the user has reviewed them.
 
 Then the phase gate: "Ready to start shaping, or is there more research to do first?"
 
@@ -116,7 +116,7 @@ The research either confirmed the Phase 1 framing or shifted it. Either way, loc
 
 The elements, in order: Why this? Why now? (push: is the "why now" real? If this could've been built six months ago and wasn't, what changed?), Hypothesis (push: is it falsifiable?), Goals and Non-goals (push: could we remove this non-goal and nothing changes? Is it scope or a dependency?), Success Metrics (push: can we measure it? Does it trace to a step this project changes?). Section-level guidance for each lives in product-doc.
 
-For a single-user or personal tool, offer to skip Success Metrics (product-doc's Success Metrics says why); don't invent discovery and adoption metrics for an audience of one.
+For a feature inside a product that's already shaped, Success Metrics are skipped unless the user asks for them; the hypothesis names what to measure. For a single-user or personal tool, offer to skip Success Metrics (product-doc's Success Metrics says why); don't invent discovery and adoption metrics for an audience of one.
 
 Confirm before moving on: "The frame is set. Ready to shape the solution?"
 
@@ -128,7 +128,7 @@ A back-and-forth, constrained by the locked frame and grounded in the research.
 2. The user reacts, gravitates, combines. Follow the thread.
 3. Narrow through pointed questions that force decisions: replace the existing flow or live alongside it? All users or new users only? New surface or inside something that exists?
 4. Ground every element in evidence. If it can't be traced, challenge it.
-5. Push for the smallest thing that solves the problem given the appetite.
+5. Push for the smallest thing that solves the problem.
 6. Once a direction is picked, brainstorm. Five to seven ideas that could live inside the shape, one line each with a question attached ("is this a view or a filter?"). The user keeps, kills, or parks each. Killed ideas go nowhere. Parked ideas, here or anywhere in the session, go to the doc's "Could be cool later" list in the Appendix, never to the tracker unless the user asks for a ticket. This is where the shape gets its texture, and it's cheap.
 
 Keep the shape at product altitude (product-doc, Overall Shape): what the user sees and does, never formats, sequencing, or stack.
@@ -151,7 +151,7 @@ Once the Overall Shape is locked, offer a quick mockup if the feature is UI-heav
 
 Fill the doc per product-doc: the locked frame, the Overall Shape, Solution Details and Analytics stubbed with "...", Designs only if links exist, Open Questions from the bookmarks you kept throughout (deferred decisions, feasibility unknowns, non-goals with tension) plus a first-principles pass, and an Appendix with the research summarized and every source linked.
 
-Run product-doc's quality check, then the cold read (Step 4), then present the draft for a final pass with the cold read's paraphrase and verdicts beside it, then write it where the project keeps docs. Update an existing entry rather than creating a new one when there is one. The same three writes close this phase: any raw research from shaping to the research page, its synthesis to an appendix toggle, and Open Questions refreshed after the user's review.
+Run product-doc's quality check, then the cold read (Step 4), then present the draft for a final pass with the cold read's paraphrase and verdicts beside it, then write it where the project keeps docs. Update an existing entry rather than creating a new one when there is one. The same three writes close this phase: any raw research from shaping saved in the repo, one appendix line pointing at it, and Open Questions refreshed after the user's review.
 
 ### Step 4: Cold read
 

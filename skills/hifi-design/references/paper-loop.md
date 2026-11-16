@@ -2,6 +2,10 @@
 
 Paper Desktop plus its MCP server (34 tools as of September 2026; the docs page lists 20, trust `tools/list`). The server needs an open file; the file should be the active tab for font lookups and selection.
 
+## Setting up the canvas
+
+Once per product, in its own session. Go Pro first; the free tier's weekly call cap dies mid-write. Confirm the files (a Final file, an Explorations file and an Archive file; `final-and-handoff.md`, "Three kinds of Paper file") and make the pages: "🏁 Final" in the Final file for locked artboards only, and one "🚧 <Surface> · Explorations" per surface in the Explorations file (emoji, surface, middle dot, Explorations in title case). Check the typeface is available and compile DESIGN.md into Paper tokens (palette, then the semantic aliases). Then build the system artboard (swatches, type scale, a table row, a card, the controls, each chart form): the clone source for every surface, approved by the user before any screen exists. A new file starts with no tokens: copy Final's set into it with create_tokens before any designer draws. Paper drops var() inside font-family and box-shadow, so designers name the family and copy Final's shadow geometry literally. Start a round in a fresh Explorations file once the current one warns of Paper's size limit (`list_resources` shows it), before the round, not after a write fails; a comment status isn't a design write, so resolving threads is safe on a file past the limit. A surface designed in parts (a hero, its art, each look of sections) gets one page per part, "🚧 <Surface> · <Part>", under a divider in build order, opened the turn its first round starts, never stacked under an old part. Each page opens with a "Start here" card at its top-left (what the page holds, which row to review, where the record starts), with the row under review at the top.
+
 ## Dialect for `write_html`
 
 - Inline styles only. Classes, style blocks, and pseudo-elements are dropped.
@@ -40,6 +44,8 @@ Paper Desktop plus its MCP server (34 tools as of September 2026; the docs page 
 - After a fix measured in pixels (a seam, an icon off its x-height, a 4px gap), screenshot the region, not the artboard: `get_screenshot` on the smallest node that holds the fix and the edge it's measured against, at scale 2, once before and once after. A 6px seam vanishes when a full artboard is downscaled to look at; a weight, word, or color change reads fine at full frame (from LangChain's design agent).
 - Edit nodes; don't delete and rewrite. Verify a node's parent before any delete.
 - Touch only nodes created this run. A commented artboard is frozen; revise on a duplicate beside it, placed at the page root, never parented into the commented artboard, where it would sit under the user's threads and read as an edit to the reviewed frame. Never delete a user-made node.
+- Add-only on a page he's reviewing: never move, reposition or reparent existing artboards, including your own from earlier rounds. New work goes in a new row ("Don't move anything in Paper"). `create_artboard` sometimes ignores left/top; reposition only the artboards you just created.
+- Paper caches an image by its path. After re-rendering, write to a new filename before re-pointing the fill, and set `backgroundSize: cover` again, because re-pointing resets it to auto.
 - Pass explicit `pageId`; the active page can change under you. Watch `contentHash` for outside token edits.
 - No bare node IDs in chat. Link frames instead: the page URL with the artboard's node parameter (`https://app.paper.design/file/<fileId>/<pageId>?node=<artboardId>`), one link per frame you mention, so "where am I looking" never comes up. Say "ready for review" and where.
 - Resolve a thread only when the fix is on the canvas. A thread that asks for options stays open until the user picks; a thread that asks a question you answered in chat stays open until the answer is on the canvas or in the doc.
@@ -66,3 +72,4 @@ Free: 100 tool calls a week. One surface built properly is 30 to 50 calls. Pro: 
 - `create_artboard(fileId, pageId, name, styles: {width, height, backgroundColor, left, top})`; left and top are honored here, so position at creation.
 - `find_nodes` filters need a styleName or styleValue; it can't search by layer name.
 - A `worker` agent (Model: worker role) for every row write over about 8KB: give them the file paths, the target ids, the mode, and "do not fix anything"; ask for ids back. One helper per artboard or per batch of replaces; a helper that also builds a second artboard needs the created ids from its own first write, which it can read from the response.
+- A frame written with `write_html` straight into a page root ignores its inline `position`, `left` and `top` and lands in open canvas (a "Start here" card landed on top of a review frame). Set `left` and `top` with `update_styles` right after, and confirm with `get_node_info`.

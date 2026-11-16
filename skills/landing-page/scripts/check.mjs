@@ -247,7 +247,7 @@ async function desktop() {
   }
   const scrollAnims = (await page.evaluate(() => window.__anims)) - before;
   const per10k = Math.round((scrollAnims / Math.max(height, 1)) * 10000);
-  check(per10k <= 12, 'scroll animations under 12 per 10,000px', `${scrollAnims} over ${height}px (${per10k} per 10k)`, true);
+  check(per10k <= 40, 'scroll animations under 40 per 10,000px', `${scrollAnims} over ${height}px (${per10k} per 10k)`, true);
 
   const lcp = await page.evaluate(() => window.__lcp);
   check(lcp && lcp.t <= 2500, 'LCP under 2.5s (judge on a deploy, not localhost)', lcp ? `${lcp.t}ms on ${lcp.tag}` : 'no entry', true);

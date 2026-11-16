@@ -36,9 +36,10 @@ This is a conversation, not a questionnaire. Inside a product-shaping run, its n
 2. **Why now?** What changed? Flip it: what happens if we do nothing? If the honest answer is "not much," that's the signal.
 3. **What does success look like?** Concrete and testable. "Twice as many new users reach their first saved artifact," not "more users activate."
 4. **Who's the first customer?** The persona or segment we design for first.
-5. **What's the appetite?** A two-week experiment and a quarter-long initiative get shaped very differently.
-6. **What's the business impact?** Activation, retention, expansion, revenue, and the mechanism. Don't accept "it's important." For a personal tool it's the payoff (time saved, money made) and whether it seeds something bigger.
-7. **What does this unlock beyond the feature?** Positioning, new segments, future work.
+5. **What's the business impact?** Activation, retention, expansion, revenue, and the mechanism. Don't accept "it's important." For a personal tool it's the payoff (time saved, money made) and whether it seeds something bigger.
+6. **What does this unlock beyond the feature?** Positioning, new segments, future work.
+
+Appetite isn't a framing question; push for the smallest shape anyway.
 
 Then present a framing check-in: one line per question, under 20 words each, and ask if it looks right before drafting. Give a confidence number ("I'd put this at roughly 70%, the signal is consistent but thin") so the user knows how much evidence the doc rests on.
 
@@ -64,7 +65,7 @@ Sections appear in this order. Not every doc needs every section, but the order 
 
 - Write Why this? Why now? first. It forces you to understand the problem before proposing solutions.
 - Write the title after the hypothesis is locked, since the job becomes clear then.
-- In Overall Shape, propose two or three meaningfully different approaches in conversation before converging. For each: what it optimizes for and what it trades away. Ground every element in something from the framing or research. Push for the smallest thing that solves the problem given the appetite.
+- In Overall Shape, propose two or three meaningfully different approaches in conversation before converging. For each: what it optimizes for and what it trades away. Ground every element in something from the framing or research. Push for the smallest thing that solves the problem.
 - Hyperlink evidence with 1 to 3 words on the specific claim. Don't re-link something already linked earlier in the doc.
 - Cross-reference related projects with real links or backlinks, not plain text.
 - Match the doc's weight to the change. A one-line code change gets a one-bullet shape. Resisting growth is part of the job.

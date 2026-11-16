@@ -1,6 +1,6 @@
 # Brief and review
 
-The brief and reference templates, the steer-yourself list, the comment-round templates, and what goes wrong, read at every surface's reference pass. The critic prompts are in `critics.md`, the done checklist in `checks.md`.
+The brief and reference templates, the steer-yourself list, the revision templates, and what goes wrong, read at every surface's prep. The critic prompts are in `critics.md`, the done checklist in `checks.md`.
 
 Contents: Hi-fi brief · Reference report (and Mobbin) · Steer yourself before showing · Revision lock · Review batch · Things that go wrong
 
@@ -10,8 +10,8 @@ Contents: Hi-fi brief · Reference report (and Mobbin) · Steer yourself before 
 Surface: <name>
 Decision this screen supports: <one sentence from the lo-fi review page>
 Product-doc goals it serves: <numbers>
-Structure is locked. Do not change: layout, reading order, element inventory, copy.
-Change only: type, color, spacing, borders, chart styling, per DESIGN.md below.
+Locked (what lo-fi or the issue settled): <layout | reading order | element inventory | copy>. Do not change these.
+Open: <the axis the takes differ on>, then type, color, spacing, borders, chart styling, per DESIGN.md below.
 DESIGN.md overrides Paper's style guide. Tokens are on the canvas; reference them, never a raw value.
 Ownership: touch only nodes you create this run. Artboard name: <Surface> - v<N> @ <date>.
 Converged wireframe: <path to the lo-fi HTML file and its screenshot; do not paste the HTML, rewrite it in Paper's dialect>
@@ -27,7 +27,7 @@ References: <the annotated technique list from mockups/hifi/references-<surface>
 Not this: <the anti-reference and the look it names>
 Before building (the lead has already run it on the token plan; a designer agent reruns it on its own direction): run the collision test. Plan the palette, type, and layout for a similar brief (same job, another product); wherever it lands close to this plan or in one of the five AI-look clusters, change direction on that axis with a choice from this product's world and say why.
 World: <the place or material from the taste interview>. Signature: <the one detail, and where it appears>.
-Directions: three, differing in <reading order | density>, not in color. Same data, same tokens. Each carries one concrete aesthetic sentence and the assumption it tests; never "unique" or "clean".
+Takes: <two or more, from the planner's plan>, differing dramatically in <the axis the planner named>, never in color alone. Same data, same tokens. Each carries one concrete aesthetic sentence and the assumption it tests; never "unique" or "clean".
 Feedback I want: <hierarchy | state coverage | chart styling>
 Feedback I don't want: new layouts, new variants, alternative structures.
 DESIGN.md: <paste>
@@ -55,7 +55,7 @@ Five to eight entries. Design-shaping's competitive look writes the flows entrie
 
 Searching: `search_screens` for the surface's job (a list of records, a dashboard, a settings form), `search_flows` for the named competitors, `search_sections` for marketing and front-door pieces. Run the two or three references the surface will lean on hardest through explain-interface, along with the product named in the taste interview and anything the user drops in along the way, and put what it measures in their Technique lines. For the dark theme, the default, add two or three from Dark Mode Design for how layers separate on near-black. The audience line matters because a sharp expert comparing options reads a card differently from a friend being shown one.
 
-Mobbin facts: OAuth, Pro plan, 60 calls a minute. Install with `claude mcp add mobbin --scope user --transport http https://api.mobbin.com/mcp`, then `/mcp` to authenticate. When Mobbin isn't available, screenshot public screens with Playwright in one pass (galleries by job in the design-sources skill) and annotate them the same way. Mobbin's coverage is thin in some domains; when a search comes back mostly off-domain, Playwright is the primary and Mobbin the top-up, and the report says which.
+Mobbin: OAuth, Pro plan, 60 calls a minute; install with `claude mcp add mobbin --scope user --transport http https://api.mobbin.com/mcp`, then `/mcp`. Without it, or when its results come back mostly off-domain, screenshot public screens with Playwright in one pass (galleries by job in design-sources), annotate them the same way, and say in the report which was primary.
 
 ## Steer yourself before showing
 
@@ -65,10 +65,15 @@ Run before any round reaches the user, on the real 2x exports, and add each new 
 - Every element where its kind belongs: metadata with metadata, actions with their object, evidence with the claim it supports?
 - Any number or word said twice: sub-copy repeating the chart, a word the color already says, a label repeating a heading?
 - One label treatment per chart, full years on wide axes, sign color on every signed number?
-- Every icon on its text's x-height, every right edge flush?
+- Every icon centered on its text, checked at 8x, every right edge flush?
+- Every gap reads as intended at 1x, inside a card (object to its edge) and outside it? On the scale but accidental-looking is still a miss.
 - The interaction matches an existing pattern (modal or inline, the save dialog), with an info popover where a field's purpose isn't obvious?
 - Each surface between too loud and invisible, checked on the pixel-checked export?
 - A critic pick contradicts one of his named likes? The like stays and the fix is softened.
+- Every decision in the ask still open? Check the tracker and the last Decisions card; re-asking a settled call costs trust.
+- Stacked blocks share their left and right edges, or the label names why not? Count the distinct widths in one view.
+- A part of a page also shown inside the whole page? One full-page example at 1440 light is enough.
+- The hand-off names the loop's step (direction round, polish, ready review), and shows critic scores only when critics ran.
 
 ## Revision lock (prefix every revision turn)
 
@@ -103,6 +108,6 @@ Read with the rest of this file before the first artboard. Each one has happened
 - Rewriting a whole artboard for a small change. Update the node.
 - Editing inside an SVG. SVG text isn't a Text node: `set_text_content` refuses it and `write_html replace` on one element never renders. Rewrite the whole SVG on the master and clone it into each instance (`paper-loop.md`).
 - Trusting undo. Nothing documents undo after an agent write; the duplicate you didn't touch is the history.
-- A carry that stops at the base. When a decision changes a number or a word, sweep for the old one: `find_nodes` on the Final page (plus `get_jsx` on chart masters, since SVG text is invisible to search), grep the repo, and grep the fetched product doc. A renamed heading reached five states and missed the two thin ones; a retired label and a dropped status word outlived their decisions in DESIGN.md; the doc's DESIGN.md toggle went three days stale.
-- Fake data drawn per surface. Each generator invented its own rows, so the client list said a client had six open invoices while the dashboard showed one, a client's billing address differed between two surfaces, and two past invoices carried the wrong status. Keep one fixture file for the product (clients, invoices, payments, the month) that every generator and artboard reads, and check the numbers across surfaces at each Final row, not only within the surface. When the fixture can't supply something, pull real rows through the product's API (a test account returned twelve real invoices with their line items) before asking for a fixture change or inventing one.
+- A carry that stops at the base. When a decision changes a number or a word, sweep for the old one: `find_nodes` on the Final page (plus `get_jsx` on chart masters, since SVG text is invisible to search), grep the repo, and grep the fetched product doc. A renamed heading once reached five states and missed two, and dead words outlived their decisions in DESIGN.md.
+- Fake data drawn per surface. Generators that each invented rows contradicted each other across surfaces (a client with six open invoices here, one there). Keep one fixture file every generator and artboard reads, check numbers across surfaces at each Final row, and pull real rows through the product's API before inventing one.
 - Critics that add. An uncapped critic proposes one more element every round; the removal preference and the round cap are what keep the surface from growing back.

@@ -9,7 +9,7 @@ Each axis 0 to 10, weighted, screenshot only.
 - **Strategy, 20%.** Five-second test: what it is, who it's for, what to do next. The idea fails for the competitor. One primary action, with a real button on the first screen. One live thing: the first screen's product is also operable (set a value and read the real result, pick an option and see it applied), made from the idea, works with a thumb, has a plain fallback without script, never blocks reading. In taste-skill's blind tests every winning page had one and the jurors named it first.
 - **Copy, 20%.** Headline literal and two lines or fewer at 1440 and 390. Every section a claim with its proof beside it, and for each proof, can you point at it (the number, the screen, the named quote), not just a sentence saying it's so? Plain reading level. No banned phrases, no invented proof, no orphan words. Written to the buyer about their problem, never to investors about the company: a "who we serve" band of segments or a picker that makes the visitor classify themselves before they learn what it does is pitch-deck copy. Proof comes from people who look like the buyer; two investor quotes on a product for anyone reads as "for VCs".
 - **Visual, 30%.** Squint and the screen resolves into two or three masses. Headline at least three times body size. Two or three text edges per screen. No two adjacent sections share a layout. Every desktop screen reads as a composed poster. Holes vs rests: every large void is a rest only if something closes it (the picture, type big enough to span it, a step in ground tone); otherwise it's a hole. Holes come from text in one half with nothing in the other, unequal outer margins, a gap between sections over about 40% of a screen, a short block stretched to a full screen, or a reveal that hasn't fired. No stretch over half a screen holds nothing. The fix is a bigger main element or less space, almost never more stuff. The product is visible, as live interface or a real crop.
-- **Motion, 10%.** One signature move, named. No identical fade on every block. Reduced motion keeps all content. Nothing hidden by a reveal that didn't fire.
+- **Motion, 10%.** One signature move, named. One tuned reveal reused per block is fine (`motion.md`); a stock fade-up on every section isn't. Reduced motion keeps all content. Nothing hidden by a reveal that didn't fire.
 - **Polish, 20%.** Clean at 1440, 768, and 390; the phone layout is its own composition, not a squeezed desktop. Hover, focus, and press states; contrast proven on the tokens; nothing colliding; ship list complete.
 
 Caps override the arithmetic:
@@ -44,7 +44,7 @@ The template look, from taste-skill's measured gap between strong and weak sites
 - A saturated gradient blob or glow behind centered text (gradients overall 22% vs 52%).
 - A pill badge above the headline; one word of the headline accented in italic, bold, color, or a gradient.
 - Every section a centered title, centered subhead, and a card grid at the same width.
-- Fade-up on every section; word-by-word reveals; the blocklisted effects in `motion.md`.
+- A stock fade-up on every section (a tuned reveal per `motion.md` is fine); word-by-word reveals outside the signature moment; the blocklisted effects in `motion.md`.
 - Logo wall in brand colors, or padded with a marquee to hide that there are four.
 - Initials-only avatars, or a quote with no company.
 

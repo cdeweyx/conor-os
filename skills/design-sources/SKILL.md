@@ -39,6 +39,7 @@ How to use it:
 | Inspora | A curated archive of recent visual and creative work; treatment ideas, not product context. | Public |
 | Awwwards | Agency-grade sites and WebGL; read for technique, discount for register. | Public |
 | Browse.cool, Hoverstat.es | Agency craft; anti-references for a working screen. | Public |
+| @uixhassan (X) | Weekly hero concepts: painted art in the page's own hue, prompt-box heroes. Concept shots, not live sites, so they show composition, never what ships. | Public; x.com blocks fetchers, read through api.fxtwitter.com |
 
 ### Brand and identity
 
@@ -48,6 +49,7 @@ How to use it:
 | Land-book, Landdding | Brand applied to a page: how an identity carries into type, color, and layout. Both listed above too. | Land-book 403s to curl; browser |
 | Fonts In Use | Type in real identities, searchable by face. | Public |
 | posts.design | Real launch and social posts, X headers, and OG images from a thousand-plus brands: an identity carried into launch assets. | Free browse; Pro tier |
+| Altalogy case studies (altalogy.com/case-studies) | A studio's rejected key visuals beside the shipped direction, in a B2B and AI register; Rollups, Langfuse and Cofounder are the ones to open. Their notes add nothing our brand process lacks. | Public |
 
 ### Sections by job
 

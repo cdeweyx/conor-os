@@ -4,7 +4,7 @@ Usage: python3 -I readme-check.py README.md
 
 FAIL (exit 1): a local link or image that doesn't exist, an SVG with live <text>
 (GitHub serves SVG with no web fonts), an emoji in a heading.
-WARN: more than three badges, a count in the top fold ("33 skills"), an image with
+WARN: a LICENSE file with no license badge, more than three badges, a count in the top fold ("33 skills"), an image with
 no dark version (#gh-dark-mode-only), a <picture> switch (it follows the OS, not
 GitHub's theme), a PNG too narrow for 2x at its display width, an image over 1MB.
 """
@@ -61,6 +61,8 @@ for line in text.splitlines():
 badges = re.findall(r"(shields\.io|badge\.svg|badgen\.net|/badge/)", text)
 if len(badges) > 3:
     warns.append(f"{len(badges)} badges; keep to three or fewer, one style")
+if any((root / n).exists() for n in ("LICENSE", "LICENSE.md", "LICENSE.txt")) and not re.search(r"badge/license", text, re.I):
+    warns.append("LICENSE file but no license badge in the top fold (shields.io badge/license-<name>-blue, linked to LICENSE)")
 
 # Counts in the top fold: everything before the first ## heading
 top = text.split("\n## ", 1)[0]

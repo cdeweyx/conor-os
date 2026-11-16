@@ -98,3 +98,33 @@ Recipe, when nothing exists to source:
 4. Render with resvg (MIT) at 1x and 50% beside a reference circle. Gaps stay at 6px or more so the 50% render survives.
 5. Check: reads at 50%, stroke count under twelve, one hue, one cue that names the object, no tangents, consistent stroke, optically centered, balanced negative space, no scene. Adjust anchors until it passes; three passes, then stop.
 6. Family-check against the product's existing glyphs; keep the script as the source and name the layer with it.
+
+## Pixel-art scenes (cities, skylines, night and dawn)
+
+From a two-lane research pass on pixel-art city scenes. The main sources are [Slynyrd's Pixelblog](https://www.slynyrd.com/blog), [saint11's tutorials](https://saint11.art/blog/pixel-art-tutorials/), [Derek Yu](https://www.derekyu.com/makegames/pixelart.html) and [Cure on Pixel Joint](https://pixeljoint.com/forum/forum_posts.asp?TID=11299).
+
+- **The one move:** set the sky's value first, then hang every plane a fixed step off it, with the subject on a middle rung. An agent's first pass misses on value structure and form, not resolution.
+- **Canvas:** work small. The masters work around 128 to 200 units wide. Use one pixel size everywhere, never mixed. A 4px unit stays whole at 1, 1.25, 1.5, 1.75 and 2x; 3px doesn't.
+- **Palette:** 20 to 24 colors per theme, built as ramps of 4 to 5. Each step moves 3 to 5 L* and 5 to 10 degrees of hue. No pure black or white. One color covers 20 to 40% of the frame. The accent is the complement of the main hue and is rationed.
+- **Value and light:**
+  - At night the sky isn't the darkest thing (sky L* 10 to 22, structure below it).
+  - Light covers 0.5 to 1.5% of the frame.
+  - Each building has two faces 20 to 30 L* apart.
+  - Glow is three stepped colors (core, mid, halo), never a blur.
+  - A 1px rim light in the light's color replaces outlines.
+- **Depth:** 5 planes about 10 L* and 10 to 15 degrees of hue apart. Far planes get 1 to 3 colors, low contrast, cool tones and no windows.
+- **Clusters and lines:**
+  - Lines run at 0, 45 or 90 degrees, or in even runs.
+  - On a curve, run lengths only grow or only shrink.
+  - No banding: stacked bands never end on the same row.
+  - Break up sky gradients with 1-unit horizontal streaks, not checkerboard dither. Dither only to taper an edge, and keep the two colors within about 6 L*.
+  - No anti-aliasing on silhouettes. No outlines.
+- **Detail density** (share of neighboring pixels that differ): 25 to 35% at 2 or 3 focal spots, 10 to 18% elsewhere, 2 to 6% in sky and water. Quiet isn't empty.
+- **City specifics:**
+  - Windows are 1 unit, with unlit ones 3 to 6 L* off the facade.
+  - Lit windows are about 5% of building area and clump in runs.
+  - Night stars: about 70% dim, 25% mid, 5% bright.
+  - At dawn the sky carries the warm hue, the buildings sit darker than the sky, and windows take the complement.
+  - Reflections are about half the source height. Ripples move 1 pixel at most.
+- **Route:** for themeable scenes, keep a script but paint into an indexed pixel buffer with hand-authored stamps, and export SVG per theme. Plain snapped vector shapes stay flat. Image models can't hold landmarks or matching themes.
+- **Leave room for motion:** keep the same shapes in both themes, one cell per light, and separable layers, so window twinkle, water shimmer and a theme-toggle sunrise can be added later.

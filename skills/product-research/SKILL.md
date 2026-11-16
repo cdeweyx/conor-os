@@ -47,7 +47,7 @@ Every lane report carries:
 - Dead ends, named, so nobody re-runs them.
 - A closing section on what this means for the next step.
 
-Present each report in full as it lands, not condensed. The user needs to see the evidence. Push each raw report to the project's research page the same day it lands, as a numbered sub-page, without waiting for a yes; the show-then-push gate is for the synthesis and the product doc, and a report that waits for the write-up step gets lost when the session ends.
+Present each report in full as it lands, not condensed. The user needs to see the evidence. Save each raw report the same day it lands, in the repo (the project's research folder, or a design lead's ignored scratch), never only in chat, since a report that waits for the write-up step gets lost when the session ends. Notion isn't a research archive: it holds the product doc, and only big structural decisions go back there; a report goes to Notion only when the user asks.
 
 After the text lanes land, screenshot the public screens they named (competitors, data sources, tools) with Playwright in one pass, since text reports describe a screen worse than a glance does. Open only the images that change a decision; the rest stay on disk as reference.
 
@@ -67,7 +67,7 @@ Insight over description. Hedge single-source findings ("supports," "is consiste
 
 ## Write it up
 
-Where the project keeps docs. One page with the synthesis, the full lane reports underneath as sub-pages or linked files. If the destination is Notion, convert tables and verify every write by re-fetching. Record the decisions the next step actually made back on the synthesis page once they're made, with the date, so the research page stays the record.
+Where the project keeps docs: the synthesis and the full lane reports in the repo; in Notion only the decisions the product doc takes from them, unless the user asks for a research page. If the destination is Notion, convert tables and verify every write by re-fetching. Record the decisions the next step actually made back on the synthesis page once they're made, with the date, so the research page stays the record.
 
 ## Checklist
 

@@ -14,7 +14,7 @@ Look at these before drawing anything. Each is here for one move.
 
 ## Top fold
 
-Centered, in this order: the mark or lockup (about 320 wide), one tagline under about 12 words, a row of three to five links to the README's own sections, no more than three badges, then the hero.
+Centered, in this order: the mark or lockup (about 320 wide), one tagline under about 12 words, a row of three to five links to the README's own sections, no more than three badges, then the hero. A repo with a license carries its license badge (`https://img.shields.io/badge/license-MIT-blue`, linked to `LICENSE`), so a visitor sees they can use it before scrolling. Platform or stack badges are optional; never a version, which drifts.
 
 - **Hero size:** 2:1, drawn at 1440×720 and exported at 2x (2880×1440), shown at `width="100%"` so it fills GitHub's 838px column. Check every candidate at 838 wide; anything under about 12px there is texture.
 - **A product with a UI:** the hero is the real product composed like a launch-page product shot, cropped to what it's for, on a brand backdrop that doesn't compete, crisp at 2x, no tilt or fake devices. The product stays the subject; the invention goes into the staging, which shouldn't repeat the last product's.

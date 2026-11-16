@@ -337,3 +337,10 @@ element.animate(
 ```
 
 Hardware-accelerated, interruptible, no bundle cost.
+
+## Gliding nav pill
+- One pill behind the links, a soft hover tint (the product's hover overlay, about 6%), never an opaque block. Siblings keep their rest ink; nothing dims.
+- Move it with `clip-path: inset()` on a fixed-width layer, not `width`. Drive each edge with a critically damped spring so it stretches on a cross, carries speed on a reversal, and never passes its target word.
+- Grow from the hovered word's width on enter; leave in about 200. Hold the last anchor (`data-last`) so leaving the nav doesn't collapse it to zero.
+- A weight step on hover needs the hidden bold copy to reserve width, or the row shifts.
+- References: Cal.com (glide), Attio (fast in, slow out), Stripe (sibling dim, which reads as disabled on dark; avoid).

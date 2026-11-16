@@ -51,7 +51,7 @@ CSS and the Web Animations API first; Motion for React when layout, presence, or
 
 ## Review before and after code
 
-Paper has no playback, so review happens on stills and recordings. Before code: a keyframe strip on the explorations page, three to five duplicates of the surface across a row at t=0, first element landed, mid-stagger, settled, each annotated with the milliseconds and easing token. That's what the user approves. Then the agent writes a single HTML prototype from the spec with the real assets, records it with Playwright, and tiles the frames into a contact sheet so one look covers the timeline.
+Paper has no playback, so motion is reviewed in a prototype, not on the canvas. Paper holds only what stills show well: a states sheet for every interactive element (rest, hover, focus, pressed, selected, disabled, busy) and three key frames per signature moment's lead direction (start, peak, settled), each annotated with the milliseconds and easing token. Timing pairs and competing directions never go on the canvas; they're toggles in the prototype (a 140-artboard strip round was cut to about 20). Then the agent writes a single HTML prototype from the spec with the real assets, records it with Playwright, and tiles the frames into a contact sheet so one look covers the timeline.
 
 Before the user sees it, run the scored critic loop in `references/review-loop.md`: three critics in fresh contexts (review-animations on the code, run by a `worker`; a taste `critic` on the contact sheet against `references/scorecard.md`; and a first-time-viewer `critic` who sees only the frames and says what just happened) (Model: worker role for the code lane, critic role for the other two), two to three rounds, stopping at a 9 or when a round gains under a point. Each round starts by re-reading the whole spec and asking whether you'd make each call again, so old work gets revisited, not just nudged; structural findings (a phase reordered, added, or cut) are fair game and get shown to the user as a before and after. Every fix edits the spec first, then the file. Log each round. Check the budget: one load sequence under a second (a signature moment has its own cap in the spec), idle CPU under five percent on a mid-range phone, no layout shift.
 
@@ -71,10 +71,16 @@ Run authoring-skills' Closing a skill update (the skill pause) at the end of eve
 - Labels that aren't true yet, or that borrow another concept's numbers. "Paid on time, 2011 to 2017" can't appear in 2012; "best of 37 clients" on a chart of one client mixed up two ideas and read as "this client beat the rest". A label on a moving chart names what the marks are, and appears when it becomes true.
 - A live number that isn't the number it lands on. One run counted a total into a heading the Final page had changed to a percentage. Everything that moves lands where it lives, the largest number on the page included.
 - Asking for a call in shorthand. Ask the way build's Asking the user says, each option one plain sentence of what the user sees or does.
+- Trusting contact sheets for live bugs. Two things the user felt in seconds never showed on a sheet: a one-frame flash of the finished screen before a staged wait's first beat (an asset loading), and a color-parse bug that blacked out a nav's siblings in dark. Before any critic, drive the prototype live in both themes with a real pointer and log the opening frames one by one.
+- Critics talking the user out of a pick, again. A critic asked to cut the half-opacity section settle and the staged wait's highlighted walk; the user kept both. Log such findings as "not taken: the user's pick" rather than applying them.
+- A late agent overwriting the frame. A framing agent from an earlier session finished after the lead had rewritten the frame and replaced it. Check a shared file's mtime before relying on it, keep the late output beside yours, and re-brief any agent that read the wrong one.
+- A fresh builder per fix round. The worker that built the prototype holds its structure; resume it for each fix round instead of spawning one that re-reads everything.
 - Tuning by feel. No spec, so every round moves a number and nothing converges. Knobs (DialKit) only for one round with the rulebook's range as the bounds, then the values go into the table.
 - A ticker at reading speed. Sixty to ninety seconds per loop, linear, paused on hover.
 - Reviewing motion from a single screenshot. Use the strip and the clip.
 - Reaching for a library before CSS. Most of this is twenty lines.
+
+- Sending the code lane to a worker. review-animations is user-invoked only (disable-model-invocation), so a worker can't load it and shouldn't rebuild its workflow. Ask the user to run `/review-animations` on the prototype and the spec, and run the other two critics meanwhile.
 
 ## Checklist
 
@@ -88,7 +94,7 @@ Run authoring-skills' Closing a skill update (the skill pause) at the end of eve
 - Signature moment: exploration brief approved, rough directions recorded, one critic ranking pass, the user picked.
 - Motion tokens in DESIGN.md; one table per surface, one row per motion plus its failure and cancel paths, reduced-motion column filled; one orchestrated reveal.
 - Built with CSS, Motion, NumberFlow, or Paper Shaders; transform and opacity only; loops pause offscreen.
-- Keyframe strip on the explorations page approved before code; HTML prototype recorded and tiled; budget checked.
+- States sheet and key frames on the explorations page; directions and timing pairs as prototype toggles; HTML prototype recorded and tiled; budget checked.
 - Critic loop run before the user saw it: three critics, two to three rounds, each round revisiting the spec, fixes through the spec, logged to `critique-<motion>.md`.
 - The user tested the prototype; their notes applied.
 - The skill pause ran.

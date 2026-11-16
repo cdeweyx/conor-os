@@ -12,7 +12,7 @@ Move the locked artboards to the Final page, renamed by surface and state ("Invo
 - The ideal state first in each row, then the other states in a fixed order (opened or expanded, thin, empty, stale, error, plus each surface's own), 1600 apart.
 - Every case the fixtures define is present, and gaps are listed rather than invented.
 - Superseded artboards move to the explorations page, marked "(superseded)", and are never deleted.
-- One element, one look across Final: when an element changes, every Final artboard that draws it is updated in the same move (search the Final page by node name and text, then duplicate the new version into place). Two artboards that disagree confuse the user and the build alike.
+- One element, one look across Final: when an element changes, every Final artboard that draws it is updated in the same move (search the Final page by node name and text, then duplicate the new version into place). Two artboards that disagree confuse the user and the build alike. A copy change that spans surfaces (a plan renamed, "paid" branded Pro) starts with a read-only audit worker: find_nodes by wildcard per file and page, written as a table of artboard, node, current text, proposed text and owning issue, before any edit. The lead then updates what its loop owns on Final, and posts the exact strings on the issue of any live design session whose file it doesn't write.
 - Every pick lands here in the same session, and so does a build's redesign (a new element, a moved one, a new hierarchy), drawn here before it's built. A build tweak (copy, spacing, color, a bug fix) is built from code and lands here in the build's hardening close, in its one Final pass, with one re-export and one token sync; until then the code wins. Final is the design's source of truth, and the design exports the browser tests read come from it.
 - When a cross-cutting pattern changes (number format, icons, label treatment, colors), a consistency pass runs across every surface on the page, not just the one where it changed.
 
@@ -46,7 +46,7 @@ A surface that renders model-generated text in bulk (summary lines, generated ti
 
 ## Shared chrome
 
-The nav, header, or any bar every surface shares is its own small surface, designed once after the main surfaces because it can't be settled until it knows all of them: the tab set, the active states, and whatever is global (a product name, search, an account mark). Until then every artboard carries a placeholder that reflects its own tab, and tab renames propagate to every artboard the same day.
+The nav, header, or any bar every surface shares is its own small surface. It has to know every surface it serves: the tab set, the active states, and whatever is global (a product name, search, an account mark). When those are fixed early (a personal site's four pages), design it right after the first surface locks, so the later surfaces draw on the real bar instead of a placeholder. When they aren't, design it after the main surfaces; until then every artboard carries a placeholder that reflects its own tab, and tab renames propagate to every artboard the same day.
 
 When its turn comes it gets a short loop: a brief, two or three directions, a pick, then it's cloned into every Final artboard and the spec gets a short section of its own.
 

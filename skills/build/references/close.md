@@ -22,7 +22,7 @@ Step 6 of the run, in full. The lead reads this when a close starts, and again w
 
 1. **Every issue landed.** Pin the close worktree at the last issue's squash commit.
 2. **The UI sweep** (a milestone that ships a surface), as in the hardening close below. The lead skims the sheets for a bug the sweep hit, a screen that doesn't match its Final artboard (a tweak the build made on purpose aside), or one that shouldn't exist, and files each into the close issue. The close issue also drains `docs/build/papercuts.md` (SKILL, Design loop).
-3. **The bug hunt.** `pr-review` in milestone mode with its bug hunts only, on the milestone's squash commits in the pinned worktree, while the lead works on. Its confirmed product findings go into the close issue. Expect them: the hunt finds the cross-issue seams the issue reviews can't, by running the app across routes and data shapes, not by reading diffs.
+3. **The bug hunt.** `pr-review` in milestone mode with its bug hunts only, on the milestone's squash commits in the pinned worktree, while the lead works on. Its confirmed product findings go into the close issue, each through the approach review before code, since hunts produce false positives the approach catches. Expect them: the hunt finds the cross-issue seams the issue reviews can't, by running the app across routes and data shapes, not by reading diffs.
 4. **Clear the board** (hardening close, step 12).
 5. **The digest and where to look.** Run the batch check on the pinned sha (`references/loop.md`, step 10a), write a short digest into the ledger and the close issue, and post where to look (below). A milestone with no surface posts the digest alone.
 

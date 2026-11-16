@@ -59,6 +59,7 @@ Word bans don't catch these, and they're where AI writing breaks most often.
 - "I believe" when he can just state the thing
 - "First... Second... Third..." unless it's actually a framework
 - Plain jargon where a user-facing description works: "the same event delivered twice runs the flow once," not "idempotency"
+- In a product conversation, a flow is what the person sees and does, step by step ("they add a recipe, press Save, and the sign-up box opens"), never a label we coined for it ("the carried path") or a research term ("the labor illusion"). One point per item, and a reply to the user's idea starts from his words.
 
 ## Tone
 
@@ -76,7 +77,7 @@ What it's not: academic, performative, preachy ("this is what I've found to work
 
 Same mechanics, different dial on personality.
 
-- **Essays and posts.** Full voice. Personal thread, an honest line or two, a quick soft close. Load `references/essays.md` before writing one.
+- **Essays and posts.** Full voice. Personal thread, an honest line or two, a quick soft close. Load `references/essays.md` and `references/samples.md` (his own unedited passages, to match the rhythm, never the lines) before writing one.
 - **Docs and specs.** Declarative and specific. Lead with the punch, kill LLM tells. Personality shows in directness and plain words, not asides. No people in critical context ("existing broken flow," not "flow built by [name]").
 - **Slack.** Short and scannable, no filler like "the team discussed." Load `references/slack.md` for the formatting rules that bite.
 - **Product UI copy.** Labels, errors, empty states, confirmations. Plain first, personality last. Load `references/ui-copy.md`.
