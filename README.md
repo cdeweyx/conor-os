@@ -12,6 +12,10 @@
 </p>
 
 <p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT"></a>
+</p>
+
+<p align="center">
   <img src="https://github.com/cdeweyx/conor-os/raw/main/assets/readme/hero-light.png#gh-light-mode-only" width="100%" alt="A 1-bit desktop booting ConorOS: a window loading brand-design over a row of step icons, research to growth">
   <img src="https://github.com/cdeweyx/conor-os/raw/main/assets/readme/hero-dark.png#gh-dark-mode-only" width="100%" alt="A 1-bit desktop booting ConorOS: a window loading brand-design over a row of step icons, research to growth">
 </p>
